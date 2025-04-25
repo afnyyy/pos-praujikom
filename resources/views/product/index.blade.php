@@ -43,7 +43,7 @@
             <td>
                 @if($product->product_photo)
                     @if(Str::startsWith($product->product_photo, ['http://', 'https://']))
-                        <img src="{{ $product->product_photo }}" alt="{{ $product->product_name }}" width="50">
+                    <img src="{{ asset('storage/' . $product->product_photo) }}" alt="{{ $product->product_name }}" width="50">
                     @else
                         <img src="{{ asset('storage/' . $product->product_photo) }}" alt="{{ $product->product_name }}" width="50">
                     @endif
@@ -51,7 +51,7 @@
                     <span>No Image</span>
                 @endif
             </td>
-            
+
             <td>{{ number_format($product->product_price, 2) }}</td>
             <td>{{ $product->product_description }}</td>
             <td>
@@ -83,8 +83,8 @@
 
 <script>
   $('.btn-hapus').click(function(e) {
-    e.preventDefault(); 
-    
+    e.preventDefault();
+
     var form = $(this).closest('form');
     var productName = $(this).data('name');
 

@@ -7,18 +7,18 @@
       <a class="nav-link {{ Request::is('dashboard') ? '' : 'collapsed' }}" href="/dashboard">
         <i class="bi bi-grid"></i>
         <span>
-          @anyrole(['Kasir', 'Pimpinan']) 
+          @anyrole(['Kasir', 'Pimpinan'])
             Stok Barang
           @endrole
 
-          @role('Administrator') 
+          @role('Administrator')
             Dashboard
           @endrole
         </span>
       </a>
     </li>
 
-    @role('Kasir') 
+    @role('Kasir')
     <li class="nav-item">
       <a class="nav-link {{ Request::is('dashboard') ? '' : 'collapsed' }}" href="/pos-sale">
         <i class="bi bi-grid"></i>
@@ -29,7 +29,7 @@
     </li>
     @endrole
 
-    @role('Pimpinan') 
+    @role('Pimpinan')
     <li class="nav-item">
       <a class="nav-link {{ Request::is('dashboard') ? '' : 'collapsed' }}" href="/pos">
         <i class="bi bi-grid"></i>
@@ -52,7 +52,7 @@
             </a>
           </li>
           <li>
-            <a href="/user" class="nav-link {{ Request::is('user') ? '' : 'collapsed' }}">
+            <a href="/users" class="nav-link {{ Request::is('user') ? '' : 'collapsed' }}">
               <i class="bi bi-circle"></i><span>User</span>
             </a>
           </li>
@@ -82,7 +82,7 @@
         </ul>
       </li>
     @endrole
-  
+
 
   </ul>
 

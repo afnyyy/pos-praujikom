@@ -4,12 +4,12 @@
 @section('content')
 <section class="py-4">
   <div class="container">
-    <h3 class="mb-4">Top 10 Produk Paling Sering Dibeli</h3>
+    <h3 class="mb-4">Top 10 Most Frequently Purchased Products</h3>
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
           <th>No</th>
-          <th>Nama Produk</th>
+          <th>Nama Product</th>
           <th>Foto</th>
           <th>Total Order</th>
           <th>Total Qty</th>

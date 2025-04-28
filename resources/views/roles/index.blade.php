@@ -1,5 +1,5 @@
 @extends('layouts.admin-layout')
-@section('page-title', 'User')
+@section('page-title', 'Role')
 
 @section('content')
 <section class="section">
@@ -11,17 +11,15 @@
           <h5 class="card-title">{{ $title ?? ''}}</h5>
           <div class="mt-4 mb-3">
             <div align="right" class="mb-3">
-              <a class="btn btn-primary" href="{{route('users.create')}}">Add Users</a>
+              <a class="btn btn-primary" href="{{route('roles.create')}}">Add Roles</a>
             </div>
             <table class="table table-bordered">
               <thead class="table-primary" style="background-color: #ADD8E6;">
                 <tr>
 
                   <th>No</th>
-                  <th>Nama</th>
-                  <th>Roles</th>
-                  <th>Email</th>
-                  <th>Password</th>
+                  <th>Name Role</th>
+                  <th>Status</th>
                   <th></th>
                 </tr>
               </thead>
@@ -31,16 +29,12 @@
                 <tr>
                     <td>{{ $index += 1 }}</td>
                     <td>{{ $data->name }}</td>
-                    <td>
-                        @foreach($data->roles as $role)
-                            <span class="badge bg-success">{{ $role->name }}</span>
-                        @endforeach
-                    </td>
-                  <td>{{ $data->email }}</td>
-                  <td>{{ $data->password }}</td>
+                    <td><span class="badge {{ $data->is_active == 1 ? 'bg-success' : 'bg-secondary' }}">
+                        {{ $data->is_active == 1 ? 'Active' : 'Inactive' }}
+                        </span></td>
                   <td>
-                    <a href="{{ route('users.edit', $data->id) }}" class="btn btn-secondary"><i class="bi bi-pencil"></i></a>
-                    <form class="d-inline" action="{{ route('users.destroy', $data->id) }}" method="post">
+                    <a href="{{ route('roles.edit', $data->id) }}" class="btn btn-secondary"><i class="bi bi-pencil"></i></a>
+                    <form class="d-inline" action="{{ route('roles.destroy', $data->id) }}" method="post">
                         @csrf
                         @method('delete')
                         <button type="submit" class="btn btn-warning">

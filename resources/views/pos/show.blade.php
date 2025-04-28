@@ -5,7 +5,7 @@
 @section('content')
 <section class="py-5 bg-white rounded">
   <div class="container">
-    <h1 class="display-4 fw-bold text-center">POS Sale Details</h1>
+    <h1 class="display-4 fw-bold text-center">Resto Nusantara Details</h1>
     <div class="row">
       <div class="col-12">
         <h2>Customer Information</h2>
@@ -16,7 +16,7 @@
           </div>
           <div class="col-md-6">
             <p><strong>Order Date:</strong> {{ \Carbon\Carbon::parse($order->order_date)->format('d M Y H:i') }}</p>
-            <p><strong>Order Status:</strong> 
+            <p><strong>Order Status:</strong>
               @if($order->order_status == 0)
                 <span class="badge bg-warning">Pending Payment</span>
               @else

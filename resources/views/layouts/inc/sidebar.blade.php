@@ -52,6 +52,11 @@
             </a>
           </li>
           <li>
+            <a href="/roles" class="nav-link {{ Request::is('role') ? '' : 'collapsed' }}">
+              <i class="bi bi-circle"></i><span>Role</span>
+            </a>
+          </li>
+          <li>
             <a href="/users" class="nav-link {{ Request::is('user') ? '' : 'collapsed' }}">
               <i class="bi bi-circle"></i><span>User</span>
             </a>

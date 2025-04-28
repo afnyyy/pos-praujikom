@@ -110,9 +110,9 @@
 <body onload="window.print()">
   <div class="wrapper">
     <header>
-      <h3>Toko AKO</h3>
-      <p>Jl. Contoh Alamat No. 123</p>
-      <p>Telp: 08123456789</p>
+      <h3>Resto Nusantara</h3>
+      <p>Jl. Jakarta Alamat No. 129</p>
+      <p>Telp: 02145251245</p>
     </header>
     <hr>
     <section>

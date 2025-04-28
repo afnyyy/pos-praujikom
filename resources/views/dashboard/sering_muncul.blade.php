@@ -2,11 +2,17 @@
 
 @section('page-title', 'Dashboard')
 @section('content')
-<section class="py-4">
+<section class="py-4" >
   <div class="container">
+    @anyrole(['Pimpinan','Administrator'])
+    <h1 class="display-4 fw-bold">Welcome, Admin!</h1>
+  @endanyrole
+  @role('Kasir')
+    <h1 class="display-4 fw-bold">Welcome, Salesperson!</h1>
+  @endrole
     <h3 class="mb-4">Top 10 Most Frequently Purchased Products</h3>
-    <table class="table table-bordered table-striped">
-      <thead>
+    <table class="table table-bordered bg-white">
+      <thead class="table-primary" style="background-color: #ADD8E6;">
         <tr>
           <th>No</th>
           <th>Nama Product</th>

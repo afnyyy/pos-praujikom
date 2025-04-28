@@ -2,6 +2,7 @@
 
 @section('content-layout')
   @include('layouts.inc.header')
+  @include('layouts.inc.head')
   @include('layouts.inc.sidebar')
 
   <main id="main" class="main">

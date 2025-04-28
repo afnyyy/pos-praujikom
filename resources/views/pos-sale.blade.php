@@ -1,15 +1,15 @@
 @extends('layouts.admin-layout')
 
-@section('page-title', 'Dashboard')
+@section('page-title', 'Kasir')
 
 @section('content')
-<section class="bg-blue-gray-50" x-data="initApp()" ">
+<section class="bg-white" x-data="initApp()">
   <!-- noprint-area -->
   <div class="hide-print flex flex-row  antialiased text-blue-gray-800" style="height: 86vh;">
     <!-- page content -->
     <div class="flex-grow flex">
       <!-- store menu -->
-      <div class="flex flex-col bg-blue-gray-50 h-full w-full py-4">
+      <div class="flex flex-col bg-white h-full w-full py-4">
         <div class="flex px-2 flex-row relative">
           <div class="absolute left-5 top-3 px-2 py-2 rounded-full bg-blue-700 text-white">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -64,8 +64,8 @@
                   x-on:click="addToCart(product)"
                 >
                   <img
-                  :src="product.image.startsWith('http://') || product.image.startsWith('https://') 
-                          ? product.image 
+                  :src="product.image.startsWith('http://') || product.image.startsWith('https://')
+                          ? product.image
                           : (product.image ? '/storage/' + product.image : '')"
                   :alt="product.name"
                   v-if="product.image"
@@ -120,8 +120,8 @@
               <template x-for="item in cart" :key="item.productId">
                 <div class="select-none mb-3 bg-blue-gray-50 rounded-lg w-full text-blue-gray-700 py-2 px-2 flex justify-center">
                     <img
-                    :src="item.image.startsWith('http://') || item.image.startsWith('https://') 
-                            ? item.image 
+                    :src="item.image.startsWith('http://') || item.image.startsWith('https://')
+                            ? item.image
                             : (item.image ? '/storage/' + item.image : '')"
                     :alt="item.name"
                     v-if="item.image"
@@ -247,9 +247,9 @@
       >
         <div id="receipt-content" class="text-left w-full text-sm p-6 overflow-auto">
           <div class="text-center">
-            <img src="img/receipt-logo.png" alt="Tailwind POS" class="mb-3 w-8 h-8 inline-block">
-            <h2 class="text-xl font-semibold">TAILWIND POS</h2>
-            <p>CABANG KONOHA SELATAN</p>
+            <img src="{{asset('assets/img/resto.png')}}" alt="Tailwind POS" class="mb-3 w-8 h-8 inline-block">
+            <h2 class="text-xl font-semibold">Resto Nusantara</h2>
+            <p>JAKARTA</p>
           </div>
           <div class="flex mt-4 text-xs">
             <div class="flex-grow">No: <span x-text="receiptNo"></span></div>
@@ -306,12 +306,12 @@
           <input type="hidden" name="cash" :value="cash">
           <input type="hidden" name="total" :value="getTotalPrice()">
           <input type="hidden" name="change" :value="change">
-        
+
           <div class="p-4 w-full">
             <button class="bg-blue-500 text-white text-lg px-4 py-3 rounded-2xl w-full focus:outline-none" x-on:click="printAndProceed()">PROCEED</button>
           </div>
         </form>
-       
+
       </div>
     </div>
   </div>
@@ -323,7 +323,7 @@
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  
+
   function initApp() {
       const app = {
           db: null,

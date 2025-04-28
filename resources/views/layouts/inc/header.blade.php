@@ -3,8 +3,8 @@
 
   <div class="d-flex align-items-center justify-content-between">
     <a href="index.html" class="logo d-flex align-items-center">
-      <img src="assets/img/logo.png" alt="">
-      <span class="d-none d-lg-block">Resto PPKD</span>
+      <img src="{{asset('assets/img/resto.png')}}" alt="" >
+      <span class="d-none d-lg-block">Rasa Nusantara</span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div>
@@ -15,8 +15,8 @@
       <span class=" d-block">
         @if(auth()->check())
         Hi, {{ auth()->user()->name }}
-        <a href="/logout" class="ms-2" >
-          Keluar
+        <a href="/logout" class="ms-4" >
+            <i class="bi bi-power" style="color: red; font-size: 1.5em;"></i>
         </a>
         @else
         Guest

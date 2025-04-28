@@ -19,8 +19,8 @@
       </div>
     </form>
 
-    <table class="table table-bordered table-striped">
-      <thead>
+    <table class="table table-bordered bg-white">
+      <thead class="table-primary" style="background-color: #ADD8E6;">
         <tr>
           <th><a href="{{ route('product.index', array_merge(request()->query(), ['sort' => 'id', 'direction' => request('direction') === 'asc' ? 'desc' : 'asc'])) }}">No</a></th>
           <th><a href="{{ route('product.index', array_merge(request()->query(), ['sort' => 'product_name', 'direction' => request('direction') === 'asc' ? 'desc' : 'asc'])) }}">Name</a></th>

@@ -1,5 +1,5 @@
 @extends('layouts.admin-layout')
-@section('page-title', 'Dashboard')
+@section('page-title', 'User')
 
 @section('content')
 <section class="section">
@@ -14,11 +14,12 @@
               <a class="btn btn-primary" href="{{route('users.create')}}">Add Users</a>
             </div>
             <table class="table table-bordered">
-              <thead>
+              <thead class="table-primary" style="background-color: #ADD8E6;">
                 <tr>
 
                   <th>No</th>
                   <th>Nama</th>
+                  <th>Roles</th>
                   <th>Email</th>
                   <th>Password</th>
                   <th></th>
@@ -28,8 +29,13 @@
                 @php $no=1 @endphp
                 @foreach ($datas as $index => $data)
                 <tr>
-                  <td>{{ $index += 1 }}</td>
-                  <td>{{ $data->name }}</td>
+                    <td>{{ $index += 1 }}</td>
+                    <td>{{ $data->name }}</td>
+                    <td>
+                        @foreach($data->roles as $role)
+                            <span class="badge bg-info">{{ $role->name }}</span>
+                        @endforeach
+                    </td>
                   <td>{{ $data->email }}</td>
                   <td>{{ $data->password }}</td>
                   <td>

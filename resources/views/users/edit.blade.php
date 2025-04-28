@@ -1,5 +1,5 @@
 @extends('layouts.admin-layout')
-@section('page-title', 'Dashboard')
+@section('page-title', 'Edit User')
 @section('content')
 <section class="section">
   <div class="col-lg-12">
@@ -21,6 +21,16 @@
             <label for="" class="col-form-label">Password</label>
             <input type="password" class="form-control" name="password" placeholder="Enter Your Password">
           </div>
+            <div class="mb-3">
+                <label class="form-label d-block">Roles</label>
+                @foreach ($roles as $role)
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="roles[]" value="{{ $role->id }}"
+                            id="role-{{ $role->id }}" {{ in_array($role->id, $edit->roles->pluck('id')->toArray()) ? 'checked' : '' }}>
+                        <label class="form-check-label" for="role-{{ $role->id }}">{{ $role->name }}</label>
+                    </div>
+                @endforeach
+            </div>
 
           <div class="mb-3">
             <button class="btn btn-primary" type="submit">Save </button>

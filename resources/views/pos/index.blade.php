@@ -54,8 +54,8 @@
       <h3>Order List</h3>
     </div>
 
-    <table class="table table-bordered table-striped">
-      <thead>
+    <table class="table table-bordered bg-white">
+      <thead class="table-primary" style="background-color: #ADD8E6;">
         <tr>
           <th>No</th>
           <th>Order ID</th>

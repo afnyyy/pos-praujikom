@@ -19,8 +19,8 @@
       </div>
     </form>
 
-    <table class="table table-bordered table-striped">
-      <thead>
+    <table class="table table-bordered bg-white">
+      <thead class="table-primary" style="background-color: #ADD8E6;">
         <tr>
           <th>No</th>
           <th>Name</th>
@@ -57,7 +57,7 @@
     <div class="d-flex justify-content-center">
       {{ $categories->appends(request()->query())->links('pagination::bootstrap-5') }}
     </div>
-    
+
   </div>
 </section>
 @endsection
@@ -66,8 +66,8 @@
 <!-- Script kamu -->
 <script>
   $('.btn-hapus').click(function(e) {
-    e.preventDefault(); 
-    
+    e.preventDefault();
+
     var form = $(this).closest('form');
     var categoryName = $(this).data('name');
 

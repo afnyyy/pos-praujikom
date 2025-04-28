@@ -18,8 +18,16 @@ class RoleSeeder extends Seeder
                 [
                     'name' => 'Administrator',
                     'is_active' => 1,
-                    
-                ]
+
+                ],
+                [
+                    'role_name' => 'Pimpinan',
+                    'is_active' => 1,
+                ],
+                [
+                    'role_name' => 'Kasir',
+                    'is_active' => 1,
+                ],
             ]
                 );
     }

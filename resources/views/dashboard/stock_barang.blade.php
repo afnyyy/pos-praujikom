@@ -4,13 +4,19 @@
 @section('content')
 <section class="py-5 text-center bg-white rounded">
   <div class="container">
+    @anyrole(['Pimpinan'])
+    <h1 class="display-4 fw-bold">Welcome, Pimpinan!</h1>
+  @endanyrole
+    @role('Kasir')
+    <h1 class="display-4 fw-bold">Welcome, Salesperson!</h1>
+  @endrole
     <div class="d-flex justify-content-between mb-3">
       <h3>Stock Barang</h3>
     </div>
-    
+
     <!-- Tabel stok barang -->
-    <table class="table table-bordered table-striped">
-      <thead>
+    <table class="table table-bordered bg-white">
+      <thead class="table-primary" style="background-color: #ADD8E6;">
         <tr>
           <th>No</a></th>
           <th>Nama Produk</a></th>

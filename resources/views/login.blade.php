@@ -9,17 +9,20 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-              <div class="card mb-3"> 
+              <div class="card mb-3">
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Point of Sales</h5>
-                    <p class="text-center small">Enter your Email and Password</p>
+                    <h5 class="card-title text-center pb-0 fs-4 " style="display: flex; justify-content: center; align-items: center">
+                        <img src="{{asset('assets/img/resto.png')}}" alt="" width="60" >
+                        Rasa Nusantara
+                    </h5>
+                    <p class="text-center small"></p>
                   </div>
 
                   <form class="row g-3 needs-validation" novalidatefg method="post" action="/action-login">
                     @csrf
-                    <div class="col-12">  
+                    <div class="col-12">
                         <label for="yourUsername" class="form-label">Email
                         <span class="text-danger small">*</span>
                         </label>
@@ -29,7 +32,7 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Password 
+                      <label for="yourPassword" class="form-label">Password
                         <span class="text-danger small">*</span>
                       </label>
                       <input type="password" value="{{ old('password') }}" name="password" class="form-control" id="yourPassword" required>
